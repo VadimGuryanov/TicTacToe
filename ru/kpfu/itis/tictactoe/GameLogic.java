@@ -20,14 +20,14 @@ public class GameLogic {
     public boolean gameIsOver(){
         for (int i = 0; i < 3; i++){
             if (table.getFromPosition(new Position(i,0)) != null & table.getFromPosition(new Position(i,1)) != null & table.getFromPosition(new Position(i, 2)) != null) {
-                if ((this.table.getFromPosition(new Position(i, 0))).equals(table.getFromPosition(new Position(i,1))) & (this.table.getFromPosition(new Position(i, 2))).equals(table.getFromPosition(new Position(i,2)))) {
+                if ((this.table.getFromPosition(new Position(i, 0))).equals(table.getFromPosition(new Position(i,1))) & (this.table.getFromPosition(new Position(i, 0))).equals(table.getFromPosition(new Position(i,2)))) { //bug fixed
                     return true;
                 }
             }
         }
         for (int i = 0; i < 3; i++){
             if (table.getFromPosition(new Position(0,i)) != null & table.getFromPosition(new Position(1,i)) != null & table.getFromPosition(new Position(2,i)) != null) {
-                if ((this.table.getFromPosition(new Position(0,i))).equals(table.getFromPosition(new Position(1,i))) & (this.table.getFromPosition(new Position(2,i))).equals(table.getFromPosition(new Position(2,i)))) {
+                if ((this.table.getFromPosition(new Position(0,i))).equals(table.getFromPosition(new Position(1,i))) & (this.table.getFromPosition(new Position(2,i))).equals(table.getFromPosition(new Position(0,i)))) { //bug fixed
                     return true;
                 }
             }
